@@ -8,7 +8,9 @@ public class Tasks extends TimerTask {
   private Integer timer;
   private Integer tryOut;
 
-  public Tasks() {
+  public Tasks(Integer tryOut, Integer timer) {
+    this.timer = timer;
+    this.tryOut = tryOut;
   }
 
   public void run() {

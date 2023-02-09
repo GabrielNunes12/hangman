@@ -7,7 +7,7 @@ import java.util.Timer;
 public class Game {
   private static Integer tryOut = 1;
   private static Integer timer = 500; //seconds to minutes
-  static Tasks task = new Tasks();
+  static Tasks task = new Tasks(tryOut, timer);
   static Timer timerCounter = new Timer();
   private static boolean hasStarted;
 
