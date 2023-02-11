@@ -19,15 +19,15 @@ public class Game {
     if(hasStarted) {
       while(!words.getWord().equals(secretWord)) {
         System.out.println("Guess a word: ");
-        String letter = scanner.nextLine();
+        char letter = scanner.nextLine().charAt(0);
         //looping for every secret words
-        for(int i = 0; i < secretWord.length(); i++) {
-          if(words.getWord().charAt(i) == letter.charAt(0)) {
-            secretWord = secretWord.substring(0, i) + letter + secretWord.substring(i, 1);
+        for(int i = 0; i < words.getWord().length(); i++) {
+          if(words.getWord().charAt(i) == letter) {
+            secretWord = secretWord.substring(0, i) + letter + secretWord.substring(i+1, words.getWord().length());
           }
         }
         System.out.println(secretWord);
-        if(secretWord.contains(letter)) {
+        if(words.getWord().indexOf(letter) != -1) {
           System.out.println("You guessed it right!");
         } else {
           System.out.println("You guessed it wrong!");
